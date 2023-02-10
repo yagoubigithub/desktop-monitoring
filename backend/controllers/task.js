@@ -43,7 +43,7 @@ exports.create = (req, res) => {
 
 exports.getTasks =  async (req, res)=>{
   try {
-    const tasks = await Task.find({ employee_id:  req.params.employee_id });
+    const tasks = await Task.find({ employee_id:  req.params.employee_id }).populate("times");
     res.status(200).json(tasks);
   } catch (err) {
     res.status(500).json(err);
@@ -54,7 +54,6 @@ exports.getTasks =  async (req, res)=>{
 
 
 exports.getTask =  async (req, res) => {
-  console.log("🚀 ~ file: task.js:57 ~ exports.getTask= ~ req", req.params)
  
   
   try {

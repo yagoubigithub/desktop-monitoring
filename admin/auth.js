@@ -29,6 +29,7 @@ reg_form.addEventListener("submit" ,  (event)=>{
             authenticate(data, ()=>{
              
                 console.log("success" , data);
+                window.location.reload()
             })
           }
         }
@@ -98,6 +99,7 @@ const login_error = document.getElementById("login_error");
             authenticate(data, ()=>{
              
                 console.log("success" , data);
+                window.location.reload()
             })
           }
         }

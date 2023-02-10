@@ -23,7 +23,7 @@ let mainWindow = new BrowserWindow({
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-   mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
   
 
 //   // Automatically open Chrome's DevTools in development mode.

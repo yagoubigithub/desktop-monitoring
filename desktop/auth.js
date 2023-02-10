@@ -21,6 +21,7 @@ loginForm.onsubmit = function(e){
         authenticate(data, ()=>{
          
             console.log("success" , data);
+            window.location.reload()
         })
       }
     }

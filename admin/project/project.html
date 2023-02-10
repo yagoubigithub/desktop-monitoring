@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!--<title> Responsiive Admin Dashboard | Desktop Monitoring </title>-->
+    <link rel="stylesheet" href="../dashboard.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../isAuth.js"></script>
+    <script>
+       if(!isAuthenticated()){
+         window.location.assign("index.html"); 
+  }
+    </script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class="bx bxl-c-plus-plus"></i>
+          <span class="logo_name">Desktop Monitoring</span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="../dashboard.html">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="../employee/employees.html" >
+              <i class="bx bx-box"></i>
+              <span class="links_name">Employee</span>
+            </a>
+          </li>
+  
+          <li>
+            <a href="./projects.html"  class="active">
+              <i class="bx bx-box"></i>
+              <span class="links_name">Projects</span>
+            </a>
+          </li>
+         
+          <li class="log_out">
+            <a href="#">
+              <i class="bx bx-log-out"></i>
+              <span class="links_name">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+      <section class="home-section">
+
+
+
+        <nav>
+            <div class="sidebar-button">
+              <i class="bx bx-menu sidebarBtn"></i>
+              <span class="dashboard">Project</span>
+            </div>
+    
+            <div class="profile-details">
+              <!--<img src="images/profile.jpg" alt="">-->
+              <span id="admin_name">Prem Shahi</span>
+            </div>
+          </nav>
+
+
+          <div class="home-content">
+            <h1 id="project_name">Project 1.2.4</h1>
+            <p id="projecr_desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam qui ipsum, accusamus officia numquam non distinctio ad eos ipsa enim sit ratione facilis, corrupti veniam officiis, dolore quas voluptates illo.</p>
+  
+
+            <br />
+
+            <form id="add_emplyee_form">
+              <div id="add_emplyee_error"></div>
+              <div class="container">
+
+                <select  id="select_employee_id"></select>
+             <br>
+
+                <button type="submit">Add</button>
+              </div>
+            </form>
+
+            <div class="sales-boxes">
+              <div class="recent-sales box">
+                <div class="title">Employees</div>
+                <table id="employees_table">
+                  
+                </table>
+            
+              </div>
+              
+            </div>
+            
+
+            </div>
+      </section>
+
+
+      <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+          sidebar.classList.toggle("active");
+          if (sidebar.classList.contains("active")) {
+            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+          } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        };
+      </script>
+       <script src="../Config.js"></script>
+       <script src="project.js"></script>
+    
+</body>
+</html>

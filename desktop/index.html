@@ -1,0 +1,53 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Desktop Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./isAuth.js"></script>
+    <script>
+
+
+  if(isAuthenticated()){
+    window.location.assign("dashboard.html"); 
+  }
+    </script>
+  </head>
+  <body>
+    <form  id="loginForm">
+      <div class="imgcontainer">
+        <img src="img/windows-icon@2x.png" alt="Avatar" class="avatar">
+      </div>
+    
+      <div class="container">
+        <span id="login_error" class="red"></span>
+        <br>
+        <label for="adminemail"><b>Admin Email</b></label>
+        <input type="text" placeholder="Enter Email" id="adminemail" required>
+
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" id="uname" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="psw" required>
+    
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" id="remember"> Remember me
+        </label>
+      </div>
+    
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+       
+      </div>
+    </form>
+  
+    <script src="Config.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>
